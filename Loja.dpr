@@ -20,7 +20,9 @@ uses
   Loja.Controller.Entity.interfaces in 'Controller\Entity\Loja.Controller.Entity.interfaces.pas',
   Loja.Controller.Entity.Factory in 'Controller\Entity\Loja.Controller.Entity.Factory.pas',
   View.Cadastro.Veiculos in 'View\View.Cadastro.Veiculos.pas' {ViewCadastroVeiculos},
-  View.Cadastro.Pecas in 'View\View.Cadastro.Pecas.pas' {ViewCadastroPecas};
+  View.Cadastro.Pecas in 'View\View.Cadastro.Pecas.pas' {ViewCadastroPecas},
+  Menus.Model.Entity.PecasCompativeis in 'Model\Conexao\Entity\Menus.Model.Entity.PecasCompativeis.pas',
+  Loja.Controller.Entity.PecasCompativeis in 'Controller\Entity\Loja.Controller.Entity.PecasCompativeis.pas';
 
 {$R *.res}
 

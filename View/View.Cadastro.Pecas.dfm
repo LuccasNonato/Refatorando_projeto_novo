@@ -2,8 +2,8 @@ object ViewCadastroPecas: TViewCadastroPecas
   Left = 0
   Top = 0
   Caption = 'Cadastro de Pe'#231'as'
-  ClientHeight = 197
-  ClientWidth = 479
+  ClientHeight = 56
+  ClientWidth = 629
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,23 +11,21 @@ object ViewCadastroPecas: TViewCadastroPecas
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poMainFormCenter
-  OnCreate = FormCreate
   TextHeight = 15
   object pnl1: TPanel
     Left = 0
     Top = 0
-    Width = 479
-    Height = 197
+    Width = 629
+    Height = 56
     Align = alClient
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitWidth = 581
-    ExplicitHeight = 270
+    ExplicitWidth = 565
+    ExplicitHeight = 103
     object lbledtCodigo: TLabeledEdit
       Left = 16
-      Top = 72
+      Top = 24
       Width = 121
       Height = 23
       EditLabel.Width = 39
@@ -37,8 +35,8 @@ object ViewCadastroPecas: TViewCadastroPecas
       Text = ''
     end
     object lbledtDescricao: TLabeledEdit
-      Left = 168
-      Top = 72
+      Left = 144
+      Top = 24
       Width = 121
       Height = 23
       EditLabel.Width = 51
@@ -48,8 +46,8 @@ object ViewCadastroPecas: TViewCadastroPecas
       Text = ''
     end
     object lbledtCodigoFabricante: TLabeledEdit
-      Left = 320
-      Top = 72
+      Left = 274
+      Top = 24
       Width = 121
       Height = 23
       EditLabel.Width = 97
@@ -59,17 +57,28 @@ object ViewCadastroPecas: TViewCadastroPecas
       Text = ''
     end
     object btn1: TButton
-      Left = 336
-      Top = 144
-      Width = 121
-      Height = 33
+      AlignWithMargins = True
+      Left = 515
+      Top = 4
+      Width = 110
+      Height = 48
+      Align = alRight
       Caption = 'Gravar'
       TabOrder = 3
-      OnClick = btn1Click
+      ExplicitLeft = 447
+      ExplicitTop = 1
+      ExplicitHeight = 54
     end
-  end
-  object ds1: TDataSource
-    Left = 176
-    Top = 128
+    object btn2: TButton
+      AlignWithMargins = True
+      Left = 409
+      Top = 4
+      Width = 100
+      Height = 48
+      Align = alRight
+      Caption = 'Editar'
+      TabOrder = 4
+      ExplicitLeft = 412
+    end
   end
 end

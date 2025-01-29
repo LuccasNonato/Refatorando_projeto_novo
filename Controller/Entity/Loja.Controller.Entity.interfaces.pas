@@ -16,6 +16,7 @@ type
        ['{4BE9312D-E34C-4F0D-9F4E-22C14A1D864E}']
        function Veiculos : iControllerEntity;
        function Pecas    : iControllerEntity;
+       function PecasCompativeis : iControllerEntity;
      end;
 
 implementation

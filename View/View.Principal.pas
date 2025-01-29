@@ -22,15 +22,18 @@ type
     btn2: TButton;
     btn3: TButton;
     btn4: TButton;
+    pnl1: TPanel;
+    dbgrdVeiculosCompativeis: TDBGrid;
+    dsPecasCompativeis: TDataSource;
     procedure pnlPecasClick(Sender: TObject);
     procedure pnlVeiculosClick(Sender: TObject);
     procedure btn1Click(Sender: TObject);
-    procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
     procedure btn4Click(Sender: TObject);
   private
     { Private declarations }
     FEntity : iControllerEntity;
+    FEntityPecasCompativeis : icontrollerEntity;
   public
     { Public declarations }
   end;
@@ -62,18 +65,6 @@ begin
   end;
 end;
 
-procedure TPrincipal.btn2Click(Sender: TObject);
-var
-  FrmCadastroPecas: TViewCadastroPecas;
-begin
-  FrmCadastroPecas := TViewCadastroPecas.Create(Self);
-  try
-    FrmCadastroPecas.ShowModal;
-  finally
-    FrmCadastroPecas.Free;
-  end;
-end;
-
 procedure TPrincipal.btn3Click(Sender: TObject);
 begin
   if not (dsBusca.State = dsInactive) then
@@ -92,11 +83,11 @@ procedure TPrincipal.btn4Click(Sender: TObject);
 begin
  if not (dsBusca.State = dsInactive) then
   begin
-  dsBusca.DataSet.Edit;
-  dsBusca.DataSet.FieldByName('Codigo').AsString := dsBusca.DataSet.FieldByName('Codigo').AsString;
-  dsBusca.DataSet.FieldByName('descricao').AsString := dsBusca.DataSet.FieldByName('descricao').AsString;
-  dsBusca.DataSet.Delete;
-  dsBusca.DataSet.Refresh;
+    dsBusca.DataSet.Edit;
+    dsBusca.DataSet.FieldByName('Codigo').AsString := dsBusca.DataSet.FieldByName('Codigo').AsString;
+    dsBusca.DataSet.FieldByName('descricao').AsString := dsBusca.DataSet.FieldByName('descricao').AsString;
+    dsBusca.DataSet.Delete;
+    dsBusca.DataSet.Refresh;
   end;
 end;
 
@@ -104,18 +95,36 @@ procedure TPrincipal.pnlPecasClick(Sender: TObject);
 var
  Busca : String;
 begin
+  dbgrdVeiculosCompativeis.Visible := True;
+
   edtBuscaItem.Enabled := True;
   Busca := 'Pecas';
   FEntity := TControllerEntityFactory.New.Pecas;
   FEntity.Lista(dsBusca);
+
+  FEntityPecasCompativeis := TControllerEntityFactory.New.PecasCompativeis;
+  FEntityPecasCompativeis.Lista(dsPecasCompativeis);
+
   pnlPecas.Color := clHighlight;
   pnlVeiculos.Color :=  clWindow;
+
+  try
+    ViewCadastroPecas.Parent := pnl1;
+    ViewCadastroPecas.Align := alClient;
+    ViewCadastroPecas.BorderStyle := bsNone;
+    ViewCadastroPecas.Show;
+  except
+    FreeAndNil(ViewCadastroPecas);
+    ShowMessage('Erro ao exibir a tela de Cadastro de Peças.');
+  end;
 end;
 
 procedure TPrincipal.pnlVeiculosClick(Sender: TObject);
 var
  Busca : String;
 begin
+  dbgrdVeiculosCompativeis.Visible := False;
+
   edtBuscaItem.Enabled := True;
   Busca := 'Veiculos';
   FEntity := TControllerEntityFactory.New.Veiculos;
@@ -123,6 +132,17 @@ begin
   dsbusca.DataSet.Refresh;
   pnlVeiculos.Color := clHighlight;
   pnlPecas.Color :=  clWindow;
+
+  try
+    ViewCadastroVeiculos.Parent := pnl1;
+    ViewCadastroVeiculos.Align := alClient;
+    ViewCadastroVeiculos.BorderStyle := bsNone;
+    ViewCadastroVeiculos.Show;
+  except
+    FreeAndNil(ViewCadastroVeiculos);
+    ShowMessage('Erro ao exibir a tela de Cadastro de Peças.');
+  end;
+
 end;
 
 end.

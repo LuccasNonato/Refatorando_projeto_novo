@@ -1,8 +1,8 @@
 object Principal: TPrincipal
   Left = 0
   Top = 0
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 690
+  ClientWidth = 915
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,21 +14,21 @@ object Principal: TPrincipal
   TextHeight = 15
   object pnlPainelCentral: TPanel
     Left = 187
-    Top = 56
-    Width = 441
-    Height = 386
+    Top = 153
+    Width = 728
+    Height = 537
     Align = alClient
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 144
-    ExplicitWidth = 480
+    ExplicitTop = 56
+    ExplicitWidth = 437
     ExplicitHeight = 385
     object dbgrdMostrarItem: TDBGrid
       Left = 1
       Top = 1
-      Width = 439
-      Height = 384
+      Width = 726
+      Height = 439
       Align = alClient
       DataSource = dsBusca
       ReadOnly = True
@@ -39,18 +39,33 @@ object Principal: TPrincipal
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
     end
+    object dbgrdVeiculosCompativeis: TDBGrid
+      Left = 1
+      Top = 440
+      Width = 726
+      Height = 96
+      Align = alBottom
+      DataSource = dsPecasCompativeis
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+      Visible = False
+    end
   end
   object pnlPainelLateral: TPanel
     Left = 0
-    Top = 56
+    Top = 153
     Width = 187
-    Height = 386
+    Height = 537
     Align = alLeft
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = -5
-    ExplicitTop = 62
+    ExplicitTop = 56
+    ExplicitHeight = 385
     object pnlPecas: TPanel
       Left = 1
       Top = 41
@@ -63,7 +78,6 @@ object Principal: TPrincipal
       TabOrder = 0
       StyleName = 'Windows'
       OnClick = pnlPecasClick
-      ExplicitWidth = 142
       object btn2: TButton
         Left = 113
         Top = 7
@@ -71,7 +85,6 @@ object Principal: TPrincipal
         Height = 25
         Caption = '+'
         TabOrder = 0
-        OnClick = btn2Click
       end
       object btn4: TButton
         Left = 147
@@ -94,7 +107,6 @@ object Principal: TPrincipal
       ParentBackground = False
       TabOrder = 1
       OnClick = pnlVeiculosClick
-      ExplicitWidth = 142
       object btn1: TButton
         Left = 113
         Top = 7
@@ -118,33 +130,44 @@ object Principal: TPrincipal
   object pnlPainelSuperior: TPanel
     Left = 0
     Top = 0
-    Width = 628
-    Height = 56
+    Width = 915
+    Height = 153
     Align = alTop
     Color = clWhite
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 624
     object lblBusca: TLabel
-      Left = 125
-      Top = 24
+      Left = 21
+      Top = 20
       Width = 31
       Height = 15
       Caption = 'Busca'
       FocusControl = edtBuscaItem
     end
     object edtBuscaItem: TEdit
-      Left = 174
-      Top = 20
-      Width = 369
-      Height = 23
+      Left = 70
+      Top = 17
+      Width = 595
+      Height = 26
       Enabled = False
       TabOrder = 0
       StyleName = 'Windows'
+    end
+    object pnl1: TPanel
+      Left = 1
+      Top = 49
+      Width = 913
+      Height = 103
+      Align = alBottom
+      TabOrder = 1
     end
   end
   object dsBusca: TDataSource
     Left = 360
     Top = 280
+  end
+  object dsPecasCompativeis: TDataSource
+    Left = 448
+    Top = 608
   end
 end

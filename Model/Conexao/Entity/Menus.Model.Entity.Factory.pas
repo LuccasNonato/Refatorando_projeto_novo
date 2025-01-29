@@ -15,12 +15,14 @@ Type
 
      function Veiculos(DataSet : iDataSet) : iModelEntity;
      function Pecas(DataSet : iDataSet) : iModelEntity;
+     function PecasCompativeis(DataSet : iDataSet) : iModelEntity;
 
     end;
 implementation
 
 uses
-  Menus.Model.Entity.Pecas, Menus.Model.Entity.Veiculos;
+  Menus.Model.Entity.Pecas, Menus.Model.Entity.Veiculos,
+  Menus.Model.Entity.PecasCompativeis;
 
 { TModelEntityFactory }
 
@@ -43,6 +45,11 @@ end;
 function TModelEntityFactory.Pecas(DataSet: iDataSet): iModelEntity;
 begin
   Result := TModelEntityVeiculos.new(DataSet);
+end;
+
+function TModelEntityFactory.PecasCompativeis(DataSet: iDataSet): iModelEntity;
+begin
+  Result := TModelEntityPecasCompativeis.New(DataSet);
 end;
 
 function TModelEntityFactory.Veiculos(DataSet: iDataSet): iModelEntity;

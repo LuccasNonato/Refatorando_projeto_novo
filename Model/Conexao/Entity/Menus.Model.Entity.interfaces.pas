@@ -16,6 +16,7 @@ type
     ['{8C37B8B2-31F7-4FB0-8DD1-9EE3D3C7CABB}']
     function Veiculos(DataSet : iDataSet) : iModelEntity;
     function Pecas(DataSet : iDataSet)    : iModelEntity;
+    function PecasCompativeis(DataSet : iDataSet)    : iModelEntity;
   end;
 
 implementation

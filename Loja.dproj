@@ -126,6 +126,8 @@
             <Form>ViewCadastroPecas</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Model\Conexao\Entity\Menus.Model.Entity.PecasCompativeis.pas"/>
+        <DCCReference Include="Controller\Entity\Loja.Controller.Entity.PecasCompativeis.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

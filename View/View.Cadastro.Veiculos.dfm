@@ -2,8 +2,8 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
   Left = 0
   Top = 0
   Caption = 'Cadastro de Veiculos'
-  ClientHeight = 233
-  ClientWidth = 462
+  ClientHeight = 55
+  ClientWidth = 758
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,13 +11,12 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poMainFormCenter
-  OnCreate = FormCreate
   TextHeight = 15
   object pnl1: TPanel
     Left = 0
     Top = 0
-    Width = 462
-    Height = 233
+    Width = 758
+    Height = 55
     Align = alClient
     Color = clWhite
     ParentBackground = False
@@ -25,8 +24,8 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
     ExplicitWidth = 458
     ExplicitHeight = 232
     object lbledt2: TLabeledEdit
-      Left = 40
-      Top = 48
+      Left = 17
+      Top = 24
       Width = 121
       Height = 23
       EditLabel.Width = 39
@@ -36,8 +35,8 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
       Text = ''
     end
     object lbledt3: TLabeledEdit
-      Left = 192
-      Top = 48
+      Left = 144
+      Top = 24
       Width = 121
       Height = 23
       EditLabel.Width = 41
@@ -47,8 +46,8 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
       Text = ''
     end
     object lbledt4: TLabeledEdit
-      Left = 40
-      Top = 120
+      Left = 271
+      Top = 24
       Width = 121
       Height = 23
       EditLabel.Width = 59
@@ -58,8 +57,8 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
       Text = ''
     end
     object lbledt5: TLabeledEdit
-      Left = 192
-      Top = 120
+      Left = 399
+      Top = 24
       Width = 121
       Height = 23
       EditLabel.Width = 34
@@ -69,17 +68,26 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
       Text = ''
     end
     object btn1: TButton
-      Left = 328
-      Top = 176
-      Width = 113
-      Height = 33
+      AlignWithMargins = True
+      Left = 644
+      Top = 4
+      Width = 110
+      Height = 47
+      Align = alRight
       Caption = 'Gravar'
       TabOrder = 4
-      OnClick = btn1Click
+      ExplicitLeft = 570
     end
-  end
-  object ds1: TDataSource
-    Left = 360
-    Top = 96
+    object btn2: TButton
+      AlignWithMargins = True
+      Left = 538
+      Top = 4
+      Width = 100
+      Height = 47
+      Align = alRight
+      Caption = 'Editar'
+      TabOrder = 5
+      ExplicitLeft = 528
+    end
   end
 end

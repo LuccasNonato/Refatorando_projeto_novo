@@ -15,13 +15,15 @@ Type
 
       function Veiculos : iControllerEntity;
       function Pecas    : iControllerEntity;
+      function PecasCompativeis    : iControllerEntity;
 
 
     end;
 implementation
 
 uses
-  Loja.Controller.Entity.Veiculos, Loja.Controller.Entity.Pecas;
+  Loja.Controller.Entity.Veiculos, Loja.Controller.Entity.Pecas,
+  Loja.Controller.Entity.PecasCompativeis;
 
 { TControllerEntityFactory }
 
@@ -44,6 +46,11 @@ end;
 function TControllerEntityFactory.Pecas: iControllerEntity;
 begin
   Result := TControllerEntityVeiculos.New;
+end;
+
+function TControllerEntityFactory.PecasCompativeis: iControllerEntity;
+begin
+  Result := TControllerEntityPecasCompativeis.New;
 end;
 
 function TControllerEntityFactory.Veiculos: iControllerEntity;
