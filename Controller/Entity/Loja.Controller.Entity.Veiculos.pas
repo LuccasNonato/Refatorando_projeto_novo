@@ -18,11 +18,13 @@ Type
       class function New : iControllerEntity;
 
       function Lista(aDataSource : TDatasource) : iControllerEntity;
+      function Salvar(aDataSource : TDatasource) : iControllerEntity;
     end;
 implementation
 
 uses
-  Loja.Controller.Conexoes.DataSet, Menus.Model.Entity.Factory;
+  Loja.Controller.Conexoes.DataSet, Menus.Model.Entity.Factory,
+  System.SysUtils;
 
 { TControllerEntityVeiculos }
 
@@ -49,6 +51,33 @@ end;
 class function TControllerEntityVeiculos.New: iControllerEntity;
 begin
   Result := Self.Create;
+end;
+
+function TControllerEntityVeiculos.Salvar(
+  aDataSource: TDatasource): iControllerEntity;
+begin
+
+  if Assigned(aDataSource) and Assigned(aDataSource.DataSet) then
+  begin
+
+    if aDataSource.DataSet.State in [dsEdit, dsInsert] then
+    begin
+
+      aDataSource.DataSet.Post;
+    end
+    else
+    begin
+
+      raise Exception.Create('O DataSet não está em modo de edição ou inserção.');
+    end;
+  end
+  else
+  begin
+
+    raise Exception.Create('DataSource ou DataSet não atribuídos.');
+  end;
+
+  Result := Self;
 end;
 
 end.

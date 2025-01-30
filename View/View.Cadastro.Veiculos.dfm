@@ -3,7 +3,7 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
   Top = 0
   Caption = 'Cadastro de Veiculos'
   ClientHeight = 55
-  ClientWidth = 758
+  ClientWidth = 1054
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,83 +11,109 @@ object ViewCadastroVeiculos: TViewCadastroVeiculos
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poMainFormCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object pnl1: TPanel
     Left = 0
     Top = 0
-    Width = 758
+    Width = 1054
     Height = 55
     Align = alClient
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 458
-    ExplicitHeight = 232
-    object lbledt2: TLabeledEdit
+    ExplicitWidth = 1050
+    ExplicitHeight = 54
+    object lbledtCodigoVeiculo: TLabeledEdit
       Left = 17
       Top = 24
       Width = 121
       Height = 23
+      CharCase = ecUpperCase
       EditLabel.Width = 39
       EditLabel.Height = 15
       EditLabel.Caption = 'Codigo'
+      Enabled = False
       TabOrder = 0
       Text = ''
     end
-    object lbledt3: TLabeledEdit
+    object lbledtModeloVeiculo: TLabeledEdit
       Left = 144
       Top = 24
       Width = 121
       Height = 23
+      CharCase = ecUpperCase
       EditLabel.Width = 41
       EditLabel.Height = 15
       EditLabel.Caption = 'Modelo'
+      Enabled = False
       TabOrder = 1
       Text = ''
     end
-    object lbledt4: TLabeledEdit
+    object lbledtMontadoraVeiculo: TLabeledEdit
       Left = 271
       Top = 24
       Width = 121
       Height = 23
+      CharCase = ecUpperCase
       EditLabel.Width = 59
       EditLabel.Height = 15
       EditLabel.Caption = 'Montadora'
+      Enabled = False
       TabOrder = 2
       Text = ''
     end
-    object lbledt5: TLabeledEdit
+    object lbledtVersaoVeiculo: TLabeledEdit
       Left = 399
       Top = 24
       Width = 121
       Height = 23
+      CharCase = ecUpperCase
       EditLabel.Width = 34
       EditLabel.Height = 15
       EditLabel.Caption = 'Versao'
+      Enabled = False
       TabOrder = 3
       Text = ''
     end
-    object btn1: TButton
+    object btnGravar: TButton
       AlignWithMargins = True
-      Left = 644
+      Left = 940
       Top = 4
       Width = 110
       Height = 47
       Align = alRight
       Caption = 'Gravar'
       TabOrder = 4
-      ExplicitLeft = 570
+      OnClick = btnGravarClick
+      ExplicitLeft = 936
+      ExplicitHeight = 46
     end
-    object btn2: TButton
+    object btnEditarVeiculos: TButton
       AlignWithMargins = True
-      Left = 538
+      Left = 834
       Top = 4
       Width = 100
       Height = 47
       Align = alRight
       Caption = 'Editar'
       TabOrder = 5
-      ExplicitLeft = 528
+      OnClick = btnEditarVeiculosClick
+      ExplicitLeft = 830
+      ExplicitHeight = 46
+    end
+    object btnIncluir: TButton
+      AlignWithMargins = True
+      Left = 728
+      Top = 4
+      Width = 100
+      Height = 47
+      Align = alRight
+      Caption = 'Incluir'
+      TabOrder = 6
+      OnClick = btnIncluirClick
+      ExplicitLeft = 724
+      ExplicitHeight = 46
     end
   end
 end

@@ -21,9 +21,8 @@ object Principal: TPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 56
-    ExplicitWidth = 437
-    ExplicitHeight = 385
+    ExplicitWidth = 724
+    ExplicitHeight = 536
     object dbgrdMostrarItem: TDBGrid
       Left = 1
       Top = 1
@@ -64,8 +63,7 @@ object Principal: TPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 56
-    ExplicitHeight = 385
+    ExplicitHeight = 536
     object pnlPecas: TPanel
       Left = 1
       Top = 41
@@ -78,21 +76,13 @@ object Principal: TPrincipal
       TabOrder = 0
       StyleName = 'Windows'
       OnClick = pnlPecasClick
-      object btn2: TButton
-        Left = 113
-        Top = 7
-        Width = 30
-        Height = 25
-        Caption = '+'
-        TabOrder = 0
-      end
       object btn4: TButton
         Left = 147
         Top = 6
         Width = 30
         Height = 25
         Caption = '-'
-        TabOrder = 1
+        TabOrder = 0
         OnClick = btn4Click
       end
     end
@@ -107,22 +97,13 @@ object Principal: TPrincipal
       ParentBackground = False
       TabOrder = 1
       OnClick = pnlVeiculosClick
-      object btn1: TButton
-        Left = 113
-        Top = 7
-        Width = 30
-        Height = 25
-        Caption = '+'
-        TabOrder = 0
-        OnClick = btn1Click
-      end
       object btn3: TButton
         Left = 147
         Top = 7
         Width = 30
         Height = 25
         Caption = '-'
-        TabOrder = 1
+        TabOrder = 0
         OnClick = btn3Click
       end
     end
@@ -136,6 +117,7 @@ object Principal: TPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 911
     object lblBusca: TLabel
       Left = 21
       Top = 20
@@ -148,18 +130,33 @@ object Principal: TPrincipal
       Left = 70
       Top = 17
       Width = 595
-      Height = 26
+      Height = 23
+      CharCase = ecUpperCase
       Enabled = False
       TabOrder = 0
       StyleName = 'Windows'
+      OnExit = edtBuscaItemExit
     end
     object pnl1: TPanel
       Left = 1
-      Top = 49
+      Top = 87
       Width = 913
-      Height = 103
+      Height = 65
       Align = alBottom
       TabOrder = 1
+    end
+    object rgFiltros: TRadioGroup
+      Left = 696
+      Top = 0
+      Width = 185
+      Height = 81
+      Caption = 'Filtros'
+      ItemIndex = 0
+      Items.Strings = (
+        'Veiculos'
+        'Pecas'
+        'Vinculos')
+      TabOrder = 2
     end
   end
   object dsBusca: TDataSource

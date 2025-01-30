@@ -3,13 +3,14 @@ unit Menus.Model.Entity.interfaces;
 interface
 
 uses
-  System.Classes, Loja.Model.Conexao.Interfaces;
+  System.Classes, Loja.Model.Conexao.Interfaces, Data.DB;
 
 type
 
   iModelEntity = interface
     ['{8BB693B1-0D5C-410B-A23A-F39862891441}']
     function Listar : TComponent;
+    function Salvar : TDataset;
   end;
 
   iModelEntityFactory = interface

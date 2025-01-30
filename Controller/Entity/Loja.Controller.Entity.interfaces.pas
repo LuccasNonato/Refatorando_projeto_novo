@@ -10,6 +10,7 @@ type
      iControllerEntity = interface
        ['{23C9631F-592E-4ACA-93DD-C38268A30608}']
        function Lista(aDataSource : TDatasource) : iControllerEntity;
+       function Salvar(aDataSource : TDatasource) : iControllerEntity;
      end;
 
      iControllerEntityFactory = interface
